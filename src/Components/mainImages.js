@@ -196,11 +196,11 @@ export class MainImages extends React.Component {
                     <Header icon='check square outline' style={{ textAlign: "center" }} content='Task Completed!' />
                     <Modal.Content>
                         <h2> Thank you for your participation! <br />
-                            Please click on Finish. </h2>
+                            Please download the result. </h2>
                     </Modal.Content>
                     <Modal.Actions>
                         <Button color='blue' inverted onClick={this.OnFinish.bind(this)}>
-                            Finish
+                        <Icon name='download icon' /> Download Result
                         </Button>
                     </Modal.Actions>
                 </Modal>
