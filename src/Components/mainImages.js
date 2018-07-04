@@ -66,7 +66,8 @@ export class MainImages extends React.Component {
 
         this.state = {
             isopen: false,
-            activeNext: false
+            activeNext: false,
+            buttonText: "Next Button"
         };
     }
 
@@ -142,6 +143,9 @@ export class MainImages extends React.Component {
         //Load next image
         taskDone++;
         //Change here to lock the images
+        if( taskDone === 50 )
+        this.setState({ buttonText: "Finish!" })
+
         if (taskDone > 50) {
             this.setState({
                 isopen: true
@@ -178,13 +182,13 @@ export class MainImages extends React.Component {
                 <div className="NextButton" style={{ width: '180px' }} >
                     {this.state.activeNext ?
                         <Button primary animated size='huge' onClick={this.changeImage.bind(this)}>
-                            <Button.Content visible> Next Image </Button.Content>
-                            <Button.Content hidden>
-                                <Icon name='right arrow' />
-                            </Button.Content>
-                        </Button>
-                        :
-                        <Button disabled size='huge'>Next Image</Button>
+                        <Button.Content visible> {this.state.buttonText} </Button.Content>
+                        <Button.Content hidden>
+                            <Icon name='right arrow' />
+                        </Button.Content>
+                    </Button>
+                    :
+                    <Button disabled size='huge'>{this.state.buttonText}</Button>
                     }
                 </div>
 

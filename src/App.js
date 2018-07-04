@@ -110,7 +110,7 @@ export default class App extends Component {
           />
         </div>
 
-        {this.state.CSVOpen ? <CSVDownload data={Result} target="" filename="Generated report.csv" /> : null}
+        {this.state.CSVOpen ? <CSVDownload data={Result} target="" filename="Generated report.csv" task={this.setState({ CSVOpen: false })}/> : null}
 
         <Modal open={this.state.modalOpen} dimmer="blurring" size="large" style={{ position: "fixed", left: "calc(50vw - 550px)", top: "50vh" }}>
           <Header icon='browser' style={{ textAlign: "center" }} content='Image Labelling Task' />
